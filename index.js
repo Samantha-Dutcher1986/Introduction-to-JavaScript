@@ -92,11 +92,12 @@ function foodcalculator(age, lbs){
   else{
     return(adult(lbs));
   }
+  // console.log(foodcalculator(age,lbs));
 }
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
 
-foodcalculator(1,15); //Don't know why this is grayed out when it's functional in the code above
+foodcalculator(1,15); //Don't know why this is grayed out. There's no syntax errors in the code above.
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
@@ -138,7 +139,8 @@ function convertFT(feet){
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
-var bottles;
+let bottles;
+function annoyingSong(number){
 for (counter = 99; counter >= 1; counter = counter - 1) 
 {
     if (counter == 1) {
@@ -157,6 +159,7 @@ for (counter = 99; counter >= 1; counter = counter - 1)
     if (counter == 1) {
         console.log("No bottles of beer on the wall.");
     }
+  }
 }
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -168,6 +171,7 @@ for (counter = 99; counter >= 1; counter = counter - 1)
 //and anything below 60 should be F
 
 function assignGrade(score) {
+  for (let score = 80; score <= 100; score++)
   if (score > 90) {
       return 'A';
   } else if (score > 80) {
@@ -179,33 +183,36 @@ function assignGrade(score) {
   } else {
       return 'F';
   }
+  console.log('For ' + i + ', you got a ' + assignGrade(i))
 }
 
-for (let i = 80; i <= 100; i++) {
-console.log('For ' + i + ', you got a ' + assignGrade(i));
-}
+// for (let score = 80; score <= 100; score++) {
+// console.log('For ' + i + ', you got a ' + assignGrade(i));
+// }
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
 
-function vowel_count(str1)
-{
-  var vowel_list = 'aeiouAEIOU';
-  var vcount = 0;
-  
-  for(var x = 0; x < str1.length ; x++)
-  {
-    if (vowel_list.indexOf(str1[x]) !== -1)
-    {
-      vcount += 1;
+// const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+
+// let str = ["To be or not to be, that is the question"]
+
+function vowelCount(str){
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let str = ["To be or not to be, that is the question"]
+  let counter = 0;
+  for (let letter of str.toLowerCase()){
+    if (vowels.includes(letter)){
+      counter++
+      return counter;
     }
-  
-  }
-  return vcount;
 }
-console.log(vowel_count("The quick brown fox"));
+console.log(`This string contains ${counter} vowel(s)`)
+
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
-//update your rock papers sissors code below to take a prompt from a user using the window object./
+// update your rock papers sissors code below to take a prompt from a user using the window object
